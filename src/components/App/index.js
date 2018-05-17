@@ -7,6 +7,7 @@ import YTSearch from 'youtube-api-search'
 // Components
 import Header from '../Header'
 import SearchBar from '../SearchBar'
+import VideoList from '../VideoList'
 
 
 const YOUTUBE_API_KEY = 'AIzaSyA872Hw7k3LHDXxN3Yb5wExY74PRUHulko'
@@ -33,6 +34,7 @@ export default class App extends Component {
         <Header />
         <main id="main">
           <SearchBar />
+          <VideoList videos={this.state.videos}/>
         </main>
       </div>
     )
