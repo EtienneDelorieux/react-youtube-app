@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,600,700,900");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+:root {
+  font-size: 15px; }
+
+body {
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", sans-serif;
+  background-color: #f6f6f6;
+  color: #fff; }
+
+h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0; }
+
+input:focus,
+button:focus {
+  outline: none; }
