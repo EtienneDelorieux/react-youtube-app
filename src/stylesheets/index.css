@@ -10,8 +10,7 @@
 body {
   font-size: 1rem;
   font-family: "Roboto", "Helvetica", sans-serif;
-  background-color: #f6f6f6;
-  color: #fff; }
+  background-color: #f6f6f6; }
 
 h1 {
   font-size: 1rem;
@@ -21,3 +20,7 @@ h1 {
 input:focus,
 button:focus {
   outline: none; }
+
+#wrapperGlobal {
+  width: 80%;
+  background-color: #fff; }
