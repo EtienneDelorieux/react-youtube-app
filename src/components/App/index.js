@@ -8,6 +8,7 @@ import YTSearch from 'youtube-api-search'
 import Header from '../Header'
 import SearchBar from '../SearchBar'
 import VideoList from '../VideoList'
+import VideoDetails from '../VideoDetails'
 
 
 const YOUTUBE_API_KEY = 'AIzaSyA872Hw7k3LHDXxN3Yb5wExY74PRUHulko'
@@ -23,7 +24,7 @@ export default class App extends Component {
     }
 
     // Youtube requests when component renders
-    YTSearch({key: YOUTUBE_API_KEY, term: 'surboards'}, (data) => {
+    YTSearch({key: YOUTUBE_API_KEY, term: 'hearthstone'}, (data) => {
       this.setState({videos: data})
     })
   }
@@ -33,8 +34,11 @@ export default class App extends Component {
       <div id="app">
         <Header />
         <main id="main">
-          <SearchBar />
-          <VideoList videos={this.state.videos}/>
+          <div className="container">
+            <SearchBar />
+            <VideoDetails />
+            <VideoList videos={this.state.videos}/>
+          </div>
         </main>
       </div>
     )

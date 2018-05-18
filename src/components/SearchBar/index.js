@@ -17,18 +17,20 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          onChange={event => this.setState({searchTerm: event.target.value})}
-          value={this.state.searchTerm}
-        />
-        <Button
-          type="submit"
-          btnClass="btn btn--primary"
-          text="Gimme Tubes"
-        />
-      </form>
+      <section id="searchBar">
+        <form>
+          <input
+            type="text"
+            onChange={event => this.setState({searchTerm: event.target.value})}
+            value={this.state.searchTerm}
+            />
+          <Button
+            type="submit"
+            btnClass="btn btn--primary"
+            text="Gimme Tubes"
+            />
+        </form>
+      </section>
     )
   }
 
