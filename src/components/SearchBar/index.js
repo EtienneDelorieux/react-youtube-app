@@ -15,22 +15,25 @@ export default class SearchBar extends Component {
     }
   }
 
+  onInputChange(term) {
+    this.setState({searchTerm: term})
+    this.props.onSearchTermChange(term)
+  }
+
   render() {
     return (
-      <section id="searchBar">
-        <form>
-          <input
-            type="text"
-            onChange={event => this.setState({searchTerm: event.target.value})}
-            value={this.state.searchTerm}
-            />
-          <Button
-            type="submit"
-            btnClass="btn btn--primary"
-            text="Gimme Tubes"
-            />
-        </form>
-      </section>
+      <form>
+        <input
+          type="text"
+          onChange={event => this.onInputChange(event.target.value)}
+          value={this.state.searchTerm}
+          />
+        <Button
+          type="submit"
+          btnClass="btn btn--primary"
+          text="Gimme Tubes"
+          />
+      </form>
     )
   }
 

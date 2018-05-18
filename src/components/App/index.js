@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 // Modules
 import YTSearch from 'youtube-api-search'
+import _ from 'lodash'
 
 // Components
 import Header from '../Header'
@@ -20,24 +21,44 @@ export default class App extends Component {
     super(props)
 
     this.state = {
-      videos: []
+      videos: [],
+      selectedVideo: null
     }
 
-    // Youtube requests when component renders
-    YTSearch({key: YOUTUBE_API_KEY, term: 'hearthstone'}, (data) => {
-      this.setState({videos: data})
+    this.videoSearch("everest");
+  }
+
+  videoSearch(term) {
+    YTSearch({key: YOUTUBE_API_KEY, term: term}, (results) => {
+      this.setState({
+        videos: results,
+        selectedVideo: results[0]
+      })
     })
   }
 
   render() {
+    const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300)
+
     return (
       <div id="app">
         <Header />
-        <main id="main">
+        <main>
           <div className="container">
-            <SearchBar />
-            <VideoDetails />
-            <VideoList videos={this.state.videos}/>
+            <section id="searchBar">
+              <SearchBar onSearchTermChange={videoSearch} />
+            </section>
+            <section id="results" className="row">
+              <div id="videoDetails" className="col-lg-8">
+                <VideoDetails video={this.state.selectedVideo} />
+              </div>
+              <div id="videoList" class="col-lg-4">
+                <VideoList
+                  onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                  videos={this.state.videos}
+                />
+              </div>
+            </section>
           </div>
         </main>
       </div>

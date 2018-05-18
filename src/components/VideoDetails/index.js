@@ -16,19 +16,14 @@ const VideoDetails = ({video}) => {
   const videoUrl = `https://www.youtube.com/embed/${videoId}`
 
   return (
-    <div className="row">
-      <div className="videoDetails col-lg-8">
-        <div className="videoDetails__media">
-          <iframe src={videoUrl}></iframe>
-        </div>
-        <div className="videoDetails__body">
-          <h1>{video.snippet.title}</h1>
-          <p className="videoDetails__desc">{video.snippet.description}</p>
-        </div>
+    <div className="videoDetails__wrapper">
+      <div className="videoDetails__media embed-responsive embed-responsive-16by9">
+        <iframe src={videoUrl} className="embed-responsive-item"></iframe>
       </div>
-      <aside className="similarVideos col-lg-4">
-        <p>Coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou coucou</p>
-      </aside>
+      <div className="videoDetails__body">
+        <h1>{video.snippet.title}</h1>
+        <p className="videoDetails__desc">{video.snippet.description}</p>
+      </div>
     </div>
   )
 }
