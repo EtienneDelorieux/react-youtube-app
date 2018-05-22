@@ -27,11 +27,12 @@ export default class SearchBar extends Component {
           type="text"
           onChange={event => this.onInputChange(event.target.value)}
           value={this.state.searchTerm}
+          autofocus="true"
           />
         <Button
           type="submit"
           btnClass="btn btn--primary"
-          text="Gimme Tubes"
+          text={["Gimme Tubes", <i class='fas fa-search'></i>]}
           />
       </form>
     )

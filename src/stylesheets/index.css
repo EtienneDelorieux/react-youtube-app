@@ -1,4 +1,72 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,600,700,900");
+.btn {
+  border-radius: 2px;
+  transition: all 0.2s;
+  border: none; }
+  .btn i {
+    margin-left: 10px; }
+
+.btn--primary {
+  background-color: #e4154d;
+  color: #fff;
+  padding: 0 20px;
+  height: 50px;
+  line-height: 50px; }
+  .btn--primary:hover {
+    background-color: #eb275c; }
+
+header {
+  padding: 20px;
+  background-color: #212121;
+  color: #fff; }
+
+#searchBar {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center; }
+  #searchBar form {
+    width: 600px;
+    position: relative; }
+  #searchBar input {
+    width: 100%;
+    padding: 10px 20px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 2px;
+    border: 1px solid #e3e3e3;
+    transition: all 0.2s; }
+    #searchBar input:focus {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); }
+  #searchBar .btn--primary {
+    position: absolute;
+    right: 10px;
+    top: 10px; }
+
+.videoDetails__body {
+  margin-top: 30px; }
+
+#videoDetails h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px; }
+
+#videoList ul {
+  list-style-type: none; }
+
+.results__item {
+  border-radius: 2px;
+  transition: all 0.2s;
+  padding: 10px;
+  display: flex; }
+  .results__item .results__media {
+    margin-right: 10px; }
+  .results__item h3 {
+    font-size: 1rem;
+    font-weight: 600; }
+  .results__item:hover {
+    cursor: pointer;
+    background-color: #fff; }
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -10,7 +78,7 @@
 body {
   font-size: 1rem;
   font-family: "Roboto", "Helvetica", sans-serif;
-  background-color: #f6f6f6; }
+  background-color: #f2f2f2; }
 
 h1 {
   font-size: 1rem;
